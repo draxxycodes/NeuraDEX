@@ -310,5 +310,6 @@ See the License for the specific language governing permissions and limitations 
 
 ## 💠 Tagline
 ### NeuraDEX — Autonomous Finance, Human Trust.
-**Built with ❤️ by Team NeuraDEX for the ASI Alliance Hackathon 2025.**
-© 2025 All Rights Reserved.
+**Built with ❤️ by Team NeuraDEX for the ASI Alliance in EthOnline 2025.**
+
+**© 2025 All Rights Reserved.**
