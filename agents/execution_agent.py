@@ -23,9 +23,6 @@ logger = logging.getLogger('execution-agent')
 exec_agent = Agent(name=AGENT_NAME, port=AGENT_PORT)
 
 async def query_agent(agent_addr: str, message: dict):
-    # use uAgents to send inter-agent messages via internal routing
-    # but here we assume the message is sent via the standard send API of the agent
-    # in tests the Agent framework resolves addresses automatically
     pass
 
 @exec_agent.on_message()

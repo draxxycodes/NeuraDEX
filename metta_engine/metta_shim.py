@@ -61,7 +61,6 @@ class MettaShim:
                         highest = 'HIGH'
                     elif level == 'MEDIUM' and highest != 'HIGH':
                         highest = 'MEDIUM'
-        # include aggregated heuristics if present
         agg = portfolio_summary.get('aggregates', {})
         # if aggregate volatility exists, also consider it
         agg_vol = float(agg.get('volatility', 0))

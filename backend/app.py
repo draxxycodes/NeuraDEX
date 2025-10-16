@@ -27,7 +27,6 @@ class PortfolioSummary(BaseModel):
 @app.get('/api/portfolio/summary')
 async def portfolio_summary(address: str = 'test'):
     # this endpoint returns a sample summary used by agents during dev and demo
-    # In full deployment the backend should query on-chain indexers or sponsor SDKs.
     sample = {
         'address': address,
         'holdings': [
@@ -45,9 +44,6 @@ class ExecutePayload(BaseModel):
 
 @app.post('/api/execute')
 async def execute_transaction(payload: ExecutePayload):
-    # In production, this endpoint would create/prepare/signed transactions.
-    # For security it should require authentication and approval flow.
-    # We simulate creation of a signed payload and return it.
     signed_tx = {
         'signed_tx': '0xdeadbeefcafebabe',
         'status': 'simulated',

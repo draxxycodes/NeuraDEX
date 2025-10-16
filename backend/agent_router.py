@@ -36,7 +36,6 @@ async def agent_chat(req: ChatRequest):
             resp.raise_for_status()
             data = resp.json()
     except Exception as e:
-        # If we cannot reach the agent via HTTP bridge, fallback to direct agent-to-agent pattern
         raise HTTPException(status_code=500, detail=f"Coordinator agent unreachable: {e}")
     return data
 
