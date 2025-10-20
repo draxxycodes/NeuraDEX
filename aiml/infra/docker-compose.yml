@@ -1,0 +1,100 @@
+version: '3.8'
+
+services:
+  risk_agent:
+    build:
+      context: ../
+      dockerfile: ./infra/Dockerfile.agent
+    container_name: risk-agent
+    command: poetry run python agents/risk_agent/src/main.py
+    ports:
+      - "8001:8001"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - AGENT_PORT=8001
+      - LOG_LEVEL=INFO
+    networks:
+      - agent_network
+    volumes:
+      - ../:/app
+
+  yield_agent:
+    build:
+      context: ../
+      dockerfile: ./infra/Dockerfile.agent
+    container_name: yield-agent
+    command: poetry run python agents/yield_agent/src/main.py
+    ports:
+      - "8002:8002"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - AGENT_PORT=8002
+    networks:
+      - agent_network
+    volumes:
+      - ../:/app
+
+  execution_agent:
+    build:
+      context: ../
+      dockerfile: ./infra/Dockerfile.agent
+    container_name: execution-agent
+    command: poetry run python agents/execution_agent/src/main.py
+    ports:
+      - "8003:8003"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - BACKEND_API_URL=${BACKEND_API_URL}
+      - AGENT_PORT=8003
+    networks:
+      - agent_network
+    volumes:
+      - ../:/app
+      
+  orchestrator_agent:
+    build:
+      context: ../
+      dockerfile: ./infra/Dockerfile.agent
+    container_name: orchestrator-agent
+    command: poetry run python agents/orchestrator_agent/src/main.py
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - RISK_AGENT_ADDRESS=${RISK_AGENT_ADDRESS}
+      - YIELD_AGENT_ADDRESS=${YIELD_AGENT_ADDRESS}
+      - EXECUTION_AGENT_ADDRESS=${EXECUTION_AGENT_ADDRESS}
+      - AGENT_PORT=8000
+    depends_on:
+      - risk_agent
+      - yield_agent
+      - execution_agent
+    networks:
+      - agent_network
+    volumes:
+      - ../:/app
+
+  discovery_agent:
+    build:
+      context: ../
+      dockerfile: ./infra/Dockerfile.agent
+    container_name: discovery-agent
+    command: poetry run python agents/discovery_agent/src/main.py
+    ports:
+      - "8004:8004"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - AGENTVERSE_API_URL=${AGENTVERSE_API_URL}
+      - AGENTVERSE_API_KEY=${AGENTVERSE_API_KEY}
+      - RISK_AGENT_ADDRESS=${RISK_AGENT_ADDRESS}
+      - YIELD_AGENT_ADDRESS=${YIELD_AGENT_ADDRESS}
+      - EXECUTION_AGENT_ADDRESS=${EXECUTION_AGENT_ADDRESS}
+      - ORCHESTRATOR_AGENT_ADDRESS=${ORCHESTRATOR_AGENT_ADDRESS}
+    networks:
+      - agent_network
+    volumes:
+      - ../:/app
+
+networks:
+  agent_network:
+    driver: bridge

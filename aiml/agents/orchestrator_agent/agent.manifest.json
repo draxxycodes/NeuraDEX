@@ -1,0 +1,22 @@
+{
+    "name": "orchestrator-agent",
+    "version": "1.0.0",
+    "description": "The main entrypoint for the agentic subsystem. It coordinates with other agents to fulfill user requests via the ASI:One Chat Protocol.",
+    "protocol": "uagents",
+    "address": "agent1qxp4g8j5k3n6w5v2k4yz7f29sr8hqzr5q7e3c2k3j9w8r2x2e6g9j7k4m9f",
+    "metadata": {
+      "tags": ["DeFi", "orchestrator", "portfolio management", "chat", "ASI:One", "ASI"],
+      "author": "AI/ML Specialist",
+      "license": "Apache-2.0"
+    },
+    "endpoints": {},
+    "chat": {
+      "protocol": "asi_one_chat_protocol_v1",
+      "description": "Your AI assistant for DeFi. Ask about portfolio risk, yield opportunities, and rebalancing strategies.",
+      "sample_queries": [
+        "What is my portfolio's risk?",
+        "Find yield for PYUSD.",
+        "Analyze my holdings and suggest a rebalancing plan."
+      ]
+    }
+  }

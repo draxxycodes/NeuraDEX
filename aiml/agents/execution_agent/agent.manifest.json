@@ -1,0 +1,45 @@
+{
+    "name": "execution-agent",
+    "version": "1.0.0",
+    "description": "Securely composes transactions and forwards them to a backend service for signing. This agent never handles private keys.",
+    "protocol": "uagents",
+    "address": "agent1qznv8g7k4g2xcy3n5v3k5yz8f28sq7gqzr4p6d4k2kw9t1w1d5h2j8k1m7h",
+    "metadata": {
+      "tags": ["DeFi", "transaction", "execution", "security", "ASI"],
+      "author": "AI/ML Specialist",
+      "license": "Apache-2.0"
+    },
+    "endpoints": {
+      "on_message": {
+        "TransactionRequest": {
+          "description": "Receives an abstract transaction request and composes it for backend signing.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "transaction": {
+                "type": "object",
+                "example": {"from": "0x...", "to": "0x...", "value": "1000000000000000000", "data": "0x..."}
+              }
+            },
+            "required": ["transaction"]
+          },
+          "output_schema": {
+            "type": "object",
+            "properties": {
+              "success": { "type": "boolean" },
+              "transaction_hash": { "type": "string" },
+              "message": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "chat": {
+      "protocol": "asi_one_chat_protocol_v1",
+      "description": "The execution agent handles transaction composition. Direct chat is typically for diagnostics.",
+      "sample_queries": [
+        "What is the status of the last transaction request?",
+        "Confirm transaction parameters."
+      ]
+    }
+  }

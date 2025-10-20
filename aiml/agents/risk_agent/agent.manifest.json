@@ -1,0 +1,53 @@
+{
+    "name": "risk-agent",
+    "version": "1.0.0",
+    "description": "Assesses DeFi portfolio risk using MeTTa symbolic reasoning to provide scores and human-readable explanations.",
+    "protocol": "uagents",
+    "address": "agent1qdp0z8a6d7vpe6v2vx37v22yvy25s9przt2w8h5w5j0q5y0q9j0g0f9a2jd",
+    "metadata": {
+      "tags": ["DeFi", "risk scoring", "portfolio management", "MeTTa", "symbolic reasoning", "ASI"],
+      "author": "AI/ML Specialist",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/your-repo/multi-agent-defi-orchestrator"
+    },
+    "endpoints": {
+      "on_message": {
+        "PortfolioData": {
+          "description": "Receives portfolio data and initiates risk assessment.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "portfolio": {
+                "type": "object",
+                "description": "JSON object representing the user's portfolio.",
+                "example": {
+                  "assets": [
+                    {"symbol": "BTC", "allocation": 0.5, "value": 50000},
+                    {"symbol": "ETH", "allocation": 0.5, "value": 50000}
+                  ]
+                }
+              }
+            },
+            "required": ["portfolio"]
+          },
+          "output_schema": {
+            "type": "object",
+            "properties": {
+              "risk_score": { "type": "string", "enum": ["Low", "Medium", "High", "ERROR"] },
+              "explanation": { "type": "string", "description": "Explanation of the risk score based on MeTTa reasoning." },
+              "provenance": { "type": "object", "description": "Audit trail of the decision." }
+            }
+          }
+        }
+      }
+    },
+    "chat": {
+      "protocol": "asi_one_chat_protocol_v1",
+      "description": "Interact with the Risk Agent to understand your portfolio's risk profile.",
+      "sample_queries": [
+        "What is the risk score of my portfolio?",
+        "Can you explain why my portfolio is high risk?",
+        "Analyze the risk of a portfolio with 80% Bitcoin and 20% Ethereum."
+      ]
+    }
+  }

@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "aiml"
+version = "1.0.0"
+description = "The AI/ML subsystem for the Multi-Agent DeFi Portfolio Orchestrator."
+authors = ["AI/ML Specialist <ai@example.com>"]
+license = "Apache-2.0"
+readme = "docs/README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
+# Core Agent and Communication Libraries
+uagents = "^0.20.1"
+requests = "^2.31.0"
+# Symbolic Reasoning Engine
+hyperon = "^0.1.0"
+# Web Endpoint for Risk Agent
+flask = "^3.0.0"
+# Observability (as per requirements)
+opentelemetry-api = "^1.22.0"
+opentelemetry-sdk = "^1.22.0"
+# General Utilities
+python-dotenv = "^1.0.0"
+
+
+[tool.poetry.group.dev.dependencies]
+# Testing Framework
+pytest = "^7.4.3"
+pytest-asyncio = "^0.21.1"
+pytest-cov = "^4.1.0"
+# Linting and Formatting
+flake8 = "^6.1.0"
+black = "^23.11.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+asyncio_mode = "auto"
+addopts = "-s -v"

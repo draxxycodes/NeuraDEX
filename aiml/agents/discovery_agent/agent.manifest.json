@@ -1,0 +1,21 @@
+{
+    "name": "discovery-agent",
+    "version": "1.0.0",
+    "description": "Handles the registration and lifecycle management of all system agents with Agentverse, ensuring they are discoverable.",
+    "protocol": "uagents",
+    "address": "agent1qwcv7h8k5g3xdy4n6w6k6z9g9f30st9jqzr5r7e5l3k0u3y3f7h3k9n2m8j",
+    "metadata": {
+      "tags": ["Agentverse", "discovery", "heartbeat", "lifecycle", "infrastructure", "ASI"],
+      "author": "AI/ML Specialist",
+      "license": "Apache-2.0"
+    },
+    "endpoints": {},
+    "chat": {
+      "protocol": "asi_one_chat_protocol_v1",
+      "description": "Provides diagnostic information about registered agents.",
+      "sample_queries": [
+        "List all registered agents.",
+        "What is the status of the risk-agent?"
+      ]
+    }
+  }

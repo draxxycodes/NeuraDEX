@@ -1,0 +1,51 @@
+{
+    "name": "yield-agent",
+    "version": "1.0.0",
+    "description": "Monitors and reports on yield opportunities for specified tokens across DeFi protocols, with a focus on PYUSD.",
+    "protocol": "uagents",
+    "address": "agent1qwha6d7d5xvy9vj29g5e6yz8g25sp6gqzr4n2c3j5kw6r0t0c4g1k7n4m5g",
+    "metadata": {
+      "tags": ["DeFi", "yield farming", "PYUSD", "APR", "APY", "ASI"],
+      "author": "AI/ML Specialist",
+      "license": "Apache-2.0"
+    },
+    "endpoints": {
+      "on_message": {
+        "YieldRequest": {
+          "description": "Request yield opportunities for a list of tokens.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "tokens": { "type": "array", "items": { "type": "string" }, "example": ["PYUSD", "USDC", "ETH"] }
+            },
+            "required": ["tokens"]
+          },
+          "output_schema": {
+            "type": "object",
+            "properties": {
+              "opportunities": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "protocol": { "type": "string" },
+                    "token": { "type": "string" },
+                    "apr": { "type": "number" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "chat": {
+      "protocol": "asi_one_chat_protocol_v1",
+      "description": "Ask the Yield Agent about the latest DeFi yield opportunities.",
+      "sample_queries": [
+        "Find yield for PYUSD.",
+        "What are the top 3 yield opportunities for Ethereum?",
+        "Compare lending rates for USDC and PYUSD."
+      ]
+    }
+  }
