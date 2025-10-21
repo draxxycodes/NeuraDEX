@@ -1,0 +1,12 @@
+nohup: ignoring input
+WARNING:  [network]: The deployed version of the Almanac Contract is 2.3.0 and you are using version 2.0.0. Update uAgents to the latest version to enable contract interactions.
+INFO:     [setup]: Adding testnet funds to agent...
+ERROR:    [setup]: Failed to add testnet funds to agent: Failed to get wealth for fetch1p433g7595pvrq3l9psmkffajslu2u4z5rhu4am
+INFO:     [yield_agent]: Starting agent with address: agent1qf889ut7vn0ljcx3nmk8jjn3sh2rkajurmyvx4rqjr86jtpksf3wzg4edgj
+INFO:     [yield_agent]: Fetching yield opportunities...
+INFO:     [yield_agent]: Successfully fetched mock PYUSD yields.
+INFO:     [yield_agent]: Successfully fetched DeFiLlama yields.
+INFO:     [yield_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8002&address=agent1qf889ut7vn0ljcx3nmk8jjn3sh2rkajurmyvx4rqjr86jtpksf3wzg4edgj
+INFO:     [yield_agent]: Starting server on http://0.0.0.0:8002 (Press CTRL+C to quit)
+INFO:     [uagents.registration]: Registration on Almanac API successful
+INFO:     [uagents.registration]: No Ledger available. Skipping registration on Almanac contract.

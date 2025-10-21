@@ -25,9 +25,9 @@ YIELD_AGENT_ADDRESS = os.getenv("YIELD_AGENT_ADDRESS")
 
 orchestrator_agent = Agent(
     name="orchestrator_agent",
-    port=8000,
+    port=8005,
     seed="orchestrator_agent_secret_seed",
-    endpoint=["http://127.0.0.1:8000/submit"],
+    endpoint=["http://127.0.0.1:8005/submit"],
 )
 fund_agent_if_low(orchestrator_agent.wallet.address())
 

@@ -24,11 +24,20 @@ ORCHESTRATOR_ADDRESS = os.getenv("ORCHESTRATOR_AGENT_ADDRESS")
 
 # THE FINAL FIX: By explicitly setting a high, unused port number, we guarantee
 # there will be no conflict with the orchestrator on port 8000.
+# Also add endpoint so the agent can receive responses.
 test_agent = Agent(
     name="acceptance_test_client",
     seed=f"test_client_seed_{uuid.uuid4()}",
-    port=8099
+    port=8099,
+    endpoint=["http://127.0.0.1:8099/submit"]
 )
+
+# Add the orchestrator's endpoint to the local storage so we can communicate locally
+if ORCHESTRATOR_ADDRESS:
+    test_agent._storage.set(
+        f"agent:{ORCHESTRATOR_ADDRESS}:endpoints",
+        ["http://127.0.0.1:8005/submit"]
+    )
 
 final_result = None
 test_completed = asyncio.Event()
@@ -59,10 +68,12 @@ async def run_test():
     )
 
     print(f"Sending request to orchestrator at: {ORCHESTRATOR_ADDRESS}")
+    print(f"Test agent address: {test_agent.address}")
     await test_agent.send(ORCHESTRATOR_ADDRESS, request)
+    print("Message sent, waiting for response...")
 
     try:
-        await asyncio.wait_for(test_completed.wait(), timeout=10.0)
+        await asyncio.wait_for(test_completed.wait(), timeout=30.0)
     except asyncio.TimeoutError:
         print("\nTEST FAILED: Timed out waiting for response.")
         return

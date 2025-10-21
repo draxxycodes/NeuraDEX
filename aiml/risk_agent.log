@@ -1,0 +1,17 @@
+nohup: ignoring input
+WARNING:  [network]: The deployed version of the Almanac Contract is 2.3.0 and you are using version 2.0.0. Update uAgents to the latest version to enable contract interactions.
+INFO:     [setup]: Adding testnet funds to agent...
+ERROR:    [setup]: Failed to add testnet funds to agent: Failed to get wealth for fetch1t836yn3pxju9gdlnjxkwskck9nq2v2qchuj9ax
+INFO:root:MeTTa knowledge base loaded successfully.
+INFO:     [risk_agent]: Starting agent with address: agent1qfs5zyzmguatsz30mfj6gntan95k9u4jcdpx3378rgj0gx4prxrqurw5hms
+INFO:     [risk_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8001&address=agent1qfs5zyzmguatsz30mfj6gntan95k9u4jcdpx3378rgj0gx4prxrqurw5hms
+INFO:     [risk_agent]: Starting server on http://0.0.0.0:8001 (Press CTRL+C to quit)
+ * Serving Flask app 'main'
+ * Debug mode: off
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://10.150.4.222:5001
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:     [uagents.registration]: Registration on Almanac API successful
+INFO:     [uagents.registration]: No Ledger available. Skipping registration on Almanac contract.

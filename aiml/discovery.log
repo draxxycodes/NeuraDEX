@@ -1,0 +1,15 @@
+nohup: ignoring input
+WARNING:  [network]: The deployed version of the Almanac Contract is 2.3.0 and you are using version 2.0.0. Update uAgents to the latest version to enable contract interactions.
+INFO:     [discovery_agent]: Starting agent with address: agent1q0uq8unr66prfpvuvga0x540vzxyw4xzz3n28mrzp82kwwlxe3vs55lykpg
+WARNING:  [discovery_agent]: No endpoints provided. Skipping registration: Agent won't be reachable.
+INFO:     [discovery_agent]: Discovery Agent is alive and running.
+INFO:     [discovery_agent]: External registration is DISABLED as Almanac endpoint is not available.
+INFO:     [discovery_agent]: Performing routine local health check... System is alive.
+INFO:     [discovery_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8004&address=agent1q0uq8unr66prfpvuvga0x540vzxyw4xzz3n28mrzp82kwwlxe3vs55lykpg
+INFO:     [discovery_agent]: Starting server on http://0.0.0.0:8004 (Press CTRL+C to quit)
+INFO:     [discovery_agent]: Performing routine local health check... System is alive.
+INFO:     [discovery_agent]: Performing routine local health check... System is alive.
+INFO:     [discovery_agent]: Performing routine local health check... System is alive.
+INFO:     [discovery_agent]: Performing routine local health check... System is alive.
+INFO:     [discovery_agent]: Performing routine local health check... System is alive.
+INFO:     [discovery_agent]: Performing routine local health check... System is alive.

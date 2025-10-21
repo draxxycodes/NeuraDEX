@@ -1,0 +1,9 @@
+nohup: ignoring input
+WARNING:  [network]: The deployed version of the Almanac Contract is 2.3.0 and you are using version 2.0.0. Update uAgents to the latest version to enable contract interactions.
+INFO:     [setup]: Adding testnet funds to agent...
+ERROR:    [setup]: Failed to add testnet funds to agent: Failed to get wealth for fetch1l89szmjw2glpew482tzkluavvskj5t42at7k8e
+INFO:     [orchestrator_agent]: Starting agent with address: agent1qwjpwluvmn6n9zlpan39h4l0642v7cp0u70ntx4343vs8k84nh7cv4vkrru
+INFO:     [orchestrator_agent]: Agent inspector available at https://agentverse.ai/inspect/?uri=http%3A//127.0.0.1%3A8005&address=agent1qwjpwluvmn6n9zlpan39h4l0642v7cp0u70ntx4343vs8k84nh7cv4vkrru
+INFO:     [orchestrator_agent]: Starting server on http://0.0.0.0:8005 (Press CTRL+C to quit)
+INFO:     [uagents.registration]: Registration on Almanac API successful
+INFO:     [uagents.registration]: No Ledger available. Skipping registration on Almanac contract.

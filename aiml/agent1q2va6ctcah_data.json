@@ -1,0 +1,11 @@
+{
+    "agent:agent1qwjpwluvmn6n9zlpan39h4l0642v7cp0u70ntx4343vs8k84nh7cv4vkrru:endpoints": [
+        "http://127.0.0.1:8005/submit"
+    ],
+    "agent:agent1qfs5zyzmguatsz30mfj6gntan95k9u4jcdpx3378rgj0gx4prxrqurw5hms:endpoints": [
+        "http://127.0.0.1:8001/submit"
+    ],
+    "agent:agent1qf889ut7vn0ljcx3nmk8jjn3sh2rkajurmyvx4rqjr86jtpksf3wzg4edgj:endpoints": [
+        "http://127.0.0.1:8002/submit"
+    ]
+}
